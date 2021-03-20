@@ -31,5 +31,12 @@ const movieDB = {
 };
 
 const ads = document.querySelector('.promo__adv');
+    cont= document.querySelector('.promo__content');
 ads.remove();
-const content = document.querySelector('.promo__content');
+cont.style.width = 'calc(100% - 300px)';
+//-------
+const genre = document.querySelector('.promo__genre');
+genre.innerHTML = 'драма';
+//=======
+
+
