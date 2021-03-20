@@ -30,6 +30,23 @@ const movieDB = {
     ]
 };
 
+movieDB.movies.sort();
+
+const list = document.querySelector('.promo__interactive-list');
+list.innerHTML = '';
+
+movieDB.movies.forEach(function(film, i){
+    list.innerHTML += `<li class='promo__interactive-item'>${i+1}. ${film}
+    <div class='delete'></div></li>`;
+
+});
+
+
+
+
+                        
+
+//---------
 const ads = document.querySelector('.promo__adv');
     cont= document.querySelector('.promo__content');
 ads.remove();
