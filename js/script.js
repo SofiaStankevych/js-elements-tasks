@@ -30,5 +30,6 @@ const movieDB = {
     ]
 };
 
-
-
+const ads = document.querySelector('.promo__adv');
+ads.remove();
+const content = document.querySelector('.promo__content');
