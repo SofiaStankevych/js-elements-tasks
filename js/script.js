@@ -81,7 +81,7 @@ addForm.addEventListener('submit', function(event){
     let newFilm = addForm.querySelector('.adding__input').value;
     if (newFilm.length > 21){
         newFilm = newFilm.substring(0,22)+'...';
-    };
+    }
 
 
     console.log(newFilm);
@@ -92,3 +92,14 @@ addForm.addEventListener('submit', function(event){
     createMovieList(movieDB.movies, list);
     addForm.reset();
 });
+const bgPromo = document.querySelector('.promo__bg');
+
+bgPromo.addEventListener('mouseover',function(event){
+    event.currentTarget.style.background = 'url(img/bg.jpg) center center/cover no-repeat';
+    event.currentTarget.style.transition = '.7s';
+});
+bgPromo.addEventListener('mouseout',function(event){
+    event.currentTarget.style.background = 'url(img/mars.webp) center center/cover no-repeat';
+    event.currentTarget.style.transition = '.7s';
+});
+
