@@ -55,5 +55,40 @@ cont.style.width = 'calc(100% - 300px)';
 const genre = document.querySelector('.promo__genre');
 genre.innerHTML = 'драма';
 //=======
+//const btn = document.querySelector('form.add button');
+//btn.onclick = function(){
+ //   alert('дякую, що натиснули на кнопку');
+//};
+// btn.addEventListener('click',function(){
+//     alert('дякую, що натиснули на кнопку');
+// },{once: true});
+
+function createMovieList(films, parentElement){
+    parentElement.innerHTML = "";
+    films.forEach(function(film, i){
+        parentElement.innerHTML += `<li class='promo__interactive-item'>${i+1}. ${film}
+        <div class='delete'></div></li>`;
+    
+    });
+
+}
+
+const addForm = document.querySelector('form.add');
+
+addForm.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    let newFilm = addForm.querySelector('.adding__input').value;
+    if (newFilm.length > 21){
+        newFilm = newFilm.substring(0,22)+'...';
+    };
 
 
+    console.log(newFilm);
+    
+    movieDB.movies.push(newFilm);
+    console.log(movieDB.movies);
+
+    createMovieList(movieDB.movies, list);
+    addForm.reset();
+});
